@@ -34,6 +34,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use JJs\Bundle\GeonamesBundle\Import\Filter as Filter;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Helper\ProgressBar;
 
 /**
  * Load Localities Command
@@ -114,7 +115,7 @@ class LoadLocalitiesCommand extends ContainerAwareCommand
         }
 
         // Import the specified countries
-        $progress = $this->getHelper('progress');
+        $progress = new ProgressBar($output);
         $importer->import($countries, $filter, new OutputLogger($output), $progress, $output);
     }
 }

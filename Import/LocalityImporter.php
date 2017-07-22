@@ -40,7 +40,7 @@ use JJs\Bundle\GeonamesBundle\Import\Filter as Filter;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use SplFileObject;
-use Symfony\Component\Console\Helper\ProgressHelper;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -480,7 +480,7 @@ class LocalityImporter
      * @return void
      */
     public function import($countries = [], Filter $filer = null, LoggerInterface $log = null,
-                           ProgressHelper $progressHelper, OutputInterface $outputInterface)
+                           ProgressBar $progress, OutputInterface $outputInterface)
     {
         $log = $log ?: new NullLogger();
         $countryRepository = $this->getCountryRepository();
@@ -493,7 +493,7 @@ class LocalityImporter
         // Import data from each country
         foreach ($countries as $countryCode) {
             $country = $countryRepository->getCountry($countryCode);
-            $this->importCountry($country, $filer, $log, $progressHelper, $outputInterface);
+            $this->importCountry($country, $filer, $log, $progress, $outputInterface);
         }
     }
 
@@ -515,7 +515,7 @@ class LocalityImporter
      * @param LoggerInterface         $log     Import log
      */
     public function importCountry($country,  Filter $filter = null, LoggerInterface $log = null,
-                                  ProgressHelper $progressHelper, OutputInterface $outputInterface)
+                                  ProgressBar $progress, OutputInterface $outputInterface)
     {
         $log = $log ?: new NullLogger();
 
@@ -564,13 +564,13 @@ class LocalityImporter
         $managers = [];
         $cities = [];
         $states = [];
+        
 
-        $progressHelper->setRedrawFrequency(100);
-        $progressHelper->start($outputInterface, $this->getLinesCount($stream));
+        $progress->start($this->getLinesCount($stream));
         $stream = @fopen($path, 'r');
         $repositories = [];
         while (false !== $row = fgetcsv($stream, 0, $separator, $enclosure)) {
-            $progressHelper->advance();
+            $progress->advance();
             // Increment the line number
             $lineNumber++;
 
@@ -658,7 +658,7 @@ class LocalityImporter
             ]);*/
         }
 
-        $progressHelper->finish();
+        $progress->finish();
         $outputInterface->writeln("Setting state field on cities...");
         $log->info("Saving {country} data", ['country' => $country->getName()]);
 
