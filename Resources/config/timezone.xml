@@ -23,7 +23,7 @@
             timezones in a relational database.
         -->
         <service id="geonames.timezone.entity_repository" class="%geonames.timezone.repository.class%">
-            <factory service="doctrine.orm.entity_manager" method="getRepository"></factory>
+            <factory service="doctrine.orm.entity_manager" method="getRepository" />
             <argument>JJs\Bundle\GeonamesBundle\Entity\Timezone</argument>
             <call method="setCountryRepository">
                 <argument id="geonames.country.repository" type="service" />
