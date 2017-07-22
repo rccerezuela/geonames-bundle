@@ -14,10 +14,16 @@
     },
     "target-dir": "JJs/Bundle/GeonamesBundle",
     "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ecomputer/JJsCommon.git"
+        }
+    ],
     "require": {
         "php": ">=5.4",
         "guzzle/http": "~3.5",
-        "jjs/common": "*",
+        "ecomputer/JJsCommon": "*",
         "symfony/framework-bundle": "~2.1"
     },
     "require-dev": {
