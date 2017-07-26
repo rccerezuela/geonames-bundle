@@ -561,6 +561,7 @@ class LocalityImporter
 
         // Iterate over all the localities in the stream
         $lineNumber = 0;
+        $batchSize = 20;
         $managers = [];
         $cities = [];
         $states = [];
@@ -641,7 +642,10 @@ class LocalityImporter
 
             // Persist the locality
             $localityManager->persist($locality);
-            $localityManager->flush();
+            
+            if (($lineNumber % $batchSize) === 0) {
+                $localityManager->flush();
+            }
 
             if($locality instanceof City)
                 $cities[] = $locality;
@@ -657,6 +661,8 @@ class LocalityImporter
                 'repository'   => get_class($localityRepository),
             ]);*/
         }
+        
+        $localityManager->flush();
 
         $progress->finish();
         $outputInterface->writeln("Setting state field on cities...");
