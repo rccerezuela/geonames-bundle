@@ -561,7 +561,7 @@ class LocalityImporter
 
         // Iterate over all the localities in the stream
         $lineNumber = 0;
-        $batchSize = 20;
+        $batchSize = 100;
         $managers = [];
         $cities = [];
         $states = [];
