@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\MappedSuperclass;
 use Doctrine\ORM\Mapping\Table;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * Geographical Locality
@@ -27,6 +28,7 @@ abstract class Locality
      * @Column(type="integer")
      * @GeneratedValue
      * @Id
+     * @JMS\Type("integer")
      * @var integer
      */
     protected $id;
