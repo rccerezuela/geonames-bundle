@@ -90,9 +90,9 @@ class Country implements CountryInterface
     
     
     /**
-     * ISO code (2 character)
+     * Continent code (2 character)
      *
-     * @Column(length=2, unique=true)
+     * @Column(length=2)
      * @var string
      */
     protected $continent;
@@ -248,7 +248,7 @@ class Country implements CountryInterface
         return $this;
     }
     
-       /**
+    /**
      * Gets the unique 2 character Continent code of this country
      * 
      * @return string
