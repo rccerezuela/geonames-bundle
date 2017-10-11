@@ -52,4 +52,11 @@ interface CountryInterface
      * @return string
      */
     function getPhonePrefix();
+    
+    /**
+     * Returns the Continent which the country beloings
+     * 
+     * @return string
+     */
+    function getContinent();
 }
