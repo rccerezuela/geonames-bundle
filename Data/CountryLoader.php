@@ -215,6 +215,7 @@ class CountryLoader
             $postalCodeFormat = $data[self::COLUMN_POSTAL_CODE_FORMAT];
             $postalCodeRegex  = $data[self::COLUMN_POSTAL_CODE_REGEX];
             $phonePrefix      = $data[self::COLUMN_PHONE];
+            $continent        = $data[self::COLUMN_CONTINENT];
 
             // Log the process
             $log->info("{code} ({name})", [
@@ -224,9 +225,10 @@ class CountryLoader
                 'postalCodeFormat' => $postalCodeFormat,
                 'postalCodeRegex'  => $postalCodeRegex,
                 'phonePrefix'      => $phonePrefix,
+                'continent'        => $continent,
             ]);
 
-            $country = new Country($code, $name, $domain, $postalCodeFormat, $postalCodeRegex, $phonePrefix);
+            $country = new Country($code, $name, $domain, $postalCodeFormat, $postalCodeRegex, $phonePrefix, $continent);
             $countryRepository->saveCountry($country);
         }
     }
