@@ -261,7 +261,7 @@ class Country implements CountryInterface
     /**
      * Sets the unique 2 character Continent code of this country
      * 
-     * @param string $code Continent code
+     * @param string $continent
      * @return Country
      */
     public function setContinent($continent)
