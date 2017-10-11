@@ -73,8 +73,16 @@ class Country implements CountryInterface
      * @var string
      */
     public $phonePrefix;
+    
+    
+    /**
+     * Continent code
+     * 
+     * @var string
+     */
+    public $continent;
 
-    public function __construct($code, $name, $domain, $postalCodeFormat, $postalCodeRegex, $phonePrefix)
+    public function __construct($code, $name, $domain, $postalCodeFormat, $postalCodeRegex, $phonePrefix, $continent)
     {
         $this->code             = $code;
         $this->name             = $name;
@@ -82,6 +90,7 @@ class Country implements CountryInterface
         $this->postalCodeFormat = $postalCodeFormat;
         $this->postalCodeRegex  = $postalCodeRegex;
         $this->phonePrefix      = $phonePrefix;
+        $this->continent        = $continent;
     }
 
     public function getCode()
@@ -119,5 +128,10 @@ class Country implements CountryInterface
     public function getPhonePrefix()
     {
         return $this->phonePrefix;
+    }
+    
+    public function getContinent()
+    {
+        return $this->continent;
     }
 }
