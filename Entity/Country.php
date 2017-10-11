@@ -87,6 +87,15 @@ class Country implements CountryInterface
      * @var string
      */
     protected $phonePrefix;
+    
+    
+    /**
+     * ISO code (2 character)
+     *
+     * @Column(length=2, unique=true)
+     * @var string
+     */
+    protected $continent;
 
     /**
      * Returns the unique identifier of this country in the local database
@@ -235,6 +244,29 @@ class Country implements CountryInterface
     public function setPhonePrefix($phonePrefix)
     {
         $this->phonePrefix = $phonePrefix;
+
+        return $this;
+    }
+    
+       /**
+     * Gets the unique 2 character Continent code of this country
+     * 
+     * @return string
+     */
+    public function getContinent()
+    {
+        return $this->continent;
+    }
+
+    /**
+     * Sets the unique 2 character Continent code of this country
+     * 
+     * @param string $code Continent code
+     * @return Country
+     */
+    public function setContinent($continent)
+    {
+        $this->continent = $continent;
 
         return $this;
     }
