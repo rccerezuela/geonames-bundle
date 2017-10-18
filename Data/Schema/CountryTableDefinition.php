@@ -72,6 +72,11 @@ class CountryTableDefinition extends TableDefinition
                     ->setNotNull(true)
                     ->setComment("Continent code (2 char)");
 
+                $table->addColumn('capital', 'string')
+                    ->setLength(255)
+                    ->setNotNull(true)
+                    ->setComment("Continent code (255 char)");
+
                 // Primary key
                 $table->setPrimaryKey(['id'], 'PK_GeoCountry_id');
 

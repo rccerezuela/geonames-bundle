@@ -97,6 +97,16 @@ class Country implements CountryInterface
      */
     protected $continent;
 
+
+    /**
+     * Capital (255 character)
+     *
+     * @Column(length=255)
+     * @var string
+     */
+    protected $capital;
+
+
     /**
      * Returns the unique identifier of this country in the local database
      * 
@@ -267,6 +277,30 @@ class Country implements CountryInterface
     public function setContinent($continent)
     {
         $this->continent = $continent;
+
+        return $this;
+    }
+
+
+    /**
+     * Gets capital of this country
+     * 
+     * @return string
+     */
+    public function getCapital()
+    {
+        return $this->capital;
+    }
+
+    /**
+     * Sets the capital of this country
+     * 
+     * @param string $capital
+     * @return Country
+     */
+    public function setCapital($capital)
+    {
+        $this->capital = $capital;
 
         return $this;
     }

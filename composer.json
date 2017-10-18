@@ -1,5 +1,5 @@
 {
-    "name": "simeza/geonames-bundle",
+    "name": "MiSStakes/geonames-bundle",
     "description": "GeoNames.org geographical data and associated functionality",
     "keywords": ["GeoNames.org", "geographical", "countries", "database"],
     "license": "MIT",
@@ -17,7 +17,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/simeza/JJsCommon.git"
+            "url": "https://github.com/MiSStakes/JJsCommon"
         }
     ],
     "require": {

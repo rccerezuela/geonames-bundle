@@ -59,4 +59,12 @@ interface CountryInterface
      * @return string
      */
     function getContinent();
+
+
+    /**
+     * Returns the Continent which the country beloings
+     * 
+     * @return capital
+     */
+    function getCapital();
 }
