@@ -58,6 +58,8 @@ class CountryRepository extends EntityRepository implements CountryRepositoryInt
         $postalCodeFormat = $source->getPostalCodeFormat();
         $postalCodeRegex  = $source->getPostalCodeRegex();
         $phonePrefix      = $source->getPhonePrefix();
+        $continent        = $source->getContinent();
+        $capital          = $source->getCapital();
 
         // Copy the country code
         if ($code !== $destination->getCode()) {
@@ -87,6 +89,16 @@ class CountryRepository extends EntityRepository implements CountryRepositoryInt
         // Copy the phone prefix
         if ($phonePrefix !== $destination->getPhonePrefix()) {
             $destination->setPhonePrefix($phonePrefix);
+        }
+        
+         // Copy the continent
+        if ($continent !== $destination->getContinent()) {
+            $destination->setContinent($continent);
+        }
+
+        // Copy the capital
+        if ($capital !== $destination->getCapital()) {
+            $destination->setCapital($capital);
         }
     }
 
