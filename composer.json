@@ -17,13 +17,13 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/MiSStakes/JJsCommon"
+            "url": "https://github.com/ecomputer/JJsCommon"
         }
     ],
     "require": {
         "php": ">=5.4",
         "guzzle/http": ">=3.5",
-        "MiSStakes/JJsCommon": "*",
+        "ecomputer/JJsCommon": "*",
         "symfony/framework-bundle": ">=2.1"
     },
     "require-dev": {
