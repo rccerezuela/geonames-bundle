@@ -1,5 +1,5 @@
 {
-    "name": "ecomputer/geonames-bundle",
+    "name": "Rara-Avis-Lab/geonames-bundle",
     "description": "GeoNames.org geographical data and associated functionality",
     "keywords": ["GeoNames.org", "geographical", "countries", "database"],
     "license": "MIT",
@@ -17,13 +17,13 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/ecomputer/JJsCommon"
+            "url": "https://github.com/Rara-Avis-Lab/JJsCommon"
         }
     ],
     "require": {
         "php": ">=5.4",
         "guzzle/http": ">=3.5",
-        "ecomputer/JJsCommon": "*",
+        "Rara-Avis-Lab/JJsCommon": "*",
         "symfony/framework-bundle": ">=2.1"
     },
     "require-dev": {
