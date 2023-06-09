@@ -17,7 +17,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/Rara-Avis-Lab/JJsCommon"
+            "url": "https://github.com/rccerezuela/JJsCommon"
         }
     ],
     "require": {
