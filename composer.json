@@ -23,7 +23,7 @@
     "require": {
         "php": ">=5.4",
         "guzzle/http": ">=3.5",
-        "Rara-Avis-Lab/JJsCommon": "*",
+        "rccerezuela/JJsCommon": "*",
         "symfony/framework-bundle": ">=2.1"
     },
     "require-dev": {
